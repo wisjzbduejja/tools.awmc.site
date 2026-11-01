@@ -1,0 +1,24 @@
+.search-field {
+  width: 300px; height: var(--control); display: flex; align-items: center; gap: 12px;
+  padding: 0 12px; background: var(--surface); --smooth-border: var(--border);
+}
+.search-field .icon { color: var(--secondary); width: 18px; height: 18px; }
+.search-field input { min-width: 0; width: 100%; background: none; border: 0; color: var(--text); font-size: var(--text-control); }
+.catalog-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 16px; font-weight: 500; line-height: 1.5; }
+.catalog-heading span { color: var(--muted); font-size: 14px; }
+.tool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.tool-card { display: block; padding: 24px; background: var(--surface); transition: background var(--motion); --radius: 16px; }
+.tool-card:hover { background: var(--raised); --smooth-border: var(--border); }
+.tool-card h2 { font-size: 18px; line-height: 1.5; margin-bottom: 8px; }
+.tool-card p { font-size: 14px; }
+.empty { text-align: center; padding: 64px 16px; }
+.empty h2 { font-size: 20px; }
+.empty p { margin: 12px 0 24px; }
+
+@media (max-width: 1000px) {
+  .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .search-field { width: 100%; }
+  .tool-grid { grid-template-columns: 1fr; gap: 16px; }
+}

@@ -1,0 +1,59 @@
+.tool-main { padding-top: 32px; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--secondary); font-size: 14px; margin-bottom: 24px; }
+.back-link:hover { color: var(--text); }
+.back-link .icon { width: 16px; height: 16px; }
+.tool-heading { margin-bottom: 32px; }
+.workspace-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 48px; align-items: start; }
+.workspace { padding: 28px; background: var(--surface); --radius: 16px; }
+.section-heading { margin-bottom: 24px; }
+.source-row { display: flex; align-items: center; gap: 12px; }
+.source-row .input-wrap { flex: 1; min-width: 0; }
+.source-row .button { flex-shrink: 0; }
+#source { font-family: ui-monospace, Consolas, monospace; }
+.page-limit { width: 160px; margin-top: 24px; }
+.form-actions { display: flex; gap: 12px; margin-top: 32px; }
+
+.instructions { padding-top: 4px; }
+.instructions ol { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 24px; }
+.instructions li { display: flex; gap: 16px; }
+.instructions li > span {
+  width: 24px; height: 24px; flex-shrink: 0; border: 1px solid var(--border);
+  border-radius: 6px; text-align: center; font-size: 13px; line-height: 22px; color: var(--secondary);
+}
+.instructions h3 { font-size: 14px; margin-bottom: 6px; }
+.instructions p { font-size: 13px; line-height: 1.7; }
+
+.activity { background: var(--surface); margin-top: 32px; --radius: 16px; }
+.activity-header { padding: 20px 28px; border-bottom: 1px solid var(--line); }
+.stats { display: grid; grid-template-columns: 120px 140px minmax(0, 1fr); gap: 24px; padding: 24px 28px; }
+.stats > div > span { font-size: 13px; color: var(--muted); display: block; margin-bottom: 8px; }
+.stats strong { font-size: 24px; font-weight: 500; line-height: 1.3; font-variant-numeric: tabular-nums; }
+.stats small { font-size: 13px; color: var(--secondary); font-weight: 400; }
+.current-status p { font-size: 14px; overflow-wrap: anywhere; color: var(--text); }
+.log-output { border-top: 1px solid var(--line); padding: 16px 28px; height: 180px; overflow: auto; scrollbar-color: var(--border) var(--surface); }
+.log-output ol { list-style: none; padding: 0; margin: 0; font: 13px/1.8 ui-monospace, Consolas, "Microsoft YaHei", monospace; }
+.log-output li { display: flex; gap: 24px; overflow-wrap: anywhere; margin: 2px 0; color: var(--secondary); }
+.log-output time { color: var(--muted); flex-shrink: 0; }
+.log-output li[data-mode=error] { color: var(--error); }
+.log-output .log-placeholder { color: var(--muted); }
+.recovery { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 20px 28px; border-top: 1px solid var(--line); }
+.recovery p { font-size: 13px; flex: 1; min-width: 180px; }
+
+@media (max-width: 1000px) {
+  .workspace-layout { gap: 28px; grid-template-columns: minmax(0, 1.6fr) minmax(240px, 1fr); }
+  .workspace { padding: 24px; }
+}
+@media (max-width: 700px) {
+  .tool-main { padding-top: 24px; }
+  .tool-heading { margin-bottom: 28px; }
+  .workspace-layout { grid-template-columns: 1fr; gap: 32px; }
+  .workspace { padding: 24px 20px; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; }
+  .current-status { grid-column: 1 / -1; }
+  .activity-header { padding: 20px; }
+  .log-output { padding: 16px 20px; }
+  .log-output li { gap: 12px; }
+  .recovery { padding: 20px; }
+  .instructions { padding: 0 4px; }
+  .instructions ol { gap: 20px; }
+}
