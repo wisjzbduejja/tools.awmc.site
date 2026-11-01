@@ -4,7 +4,7 @@
 
 ## 本地开发
 
-需要 Node.js 22.12+（建议 24 LTS）。
+部署基准为 EdgeOne 预装的 Node.js 22.11.0；本地建议使用同一版本，也可使用更新的 Node.js 22 / 24。
 
 ```sh
 npm ci
@@ -24,11 +24,11 @@ npm run preview
 
 1. 将此目录提交至自己的 GitHub 仓库，包含 `package-lock.json`，不要提交 `node_modules` 或 `dist`。
 2. 在 EdgeOne Pages 导入该仓库，选择部署分支。
-3. 框架选择 Vite（或其他静态框架），根目录为仓库根目录；已在 `edgeone.json` 声明安装命令 `npm ci`、构建命令 `npm run build`、输出目录 `dist` 和 Node.js 22.12.0。
-4. 选择 Node.js 22.12+ 或 24；不需要配置环境变量。
+3. 框架选择 Vite（或其他静态框架），根目录为仓库根目录；已在 `edgeone.json` 声明安装命令 `npm ci`、构建命令 `npm run build`、输出目录 `dist` 和 Node.js 22.11.0。
+4. 控制台 Node.js 版本选择预装的 22.11.0；不需要配置环境变量。
 5. 部署后检查 `/` 和 `/tools/chaoxing/`，包括直接访问与刷新。
 
-配置字段参考 [EdgeOne 官方说明](https://pages.edgeone.ai/document/edgeone-json)。Node.js 版本也通过 `.nvmrc` 固定；若构建环境限制可选版本，请使用满足 Vite 要求的 22.12+ / 24。
+配置字段参考 [EdgeOne 官方说明](https://pages.edgeone.ai/document/edgeone-json)。`.nvmrc` 与 `edgeone.json` 保持一致，避免触发未预装版本的切换失败。构建工具固定为兼容 Node.js 22.11.0 的 Vite 6.4.5；不要只升级 Vite 主版本而忽略部署环境的 Node.js 要求。
 
 这是多页面构建，工具页面有独立的 `index.html`。不需要 SPA 回退，也不要将所有路径重写到首页。项目默认部署在域名根路径；子目录托管需要同时调整 Vite base 和导航 URL。
 
