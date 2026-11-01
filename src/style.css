@@ -25,6 +25,7 @@
   --space-8: 32px;
   --space-12: 48px;
   --control: 40px;
+  --control-radius: 10px;
   --radius: 10px;
   --motion: 150ms;
 }
@@ -75,6 +76,7 @@ p { color: var(--secondary); }
 main { width: min(1168px, 100%); padding: 48px 24px 64px; margin: 0 auto; }
 
 /* Shared form controls. */
+.button, .input-wrap, .search-field { --radius: var(--control-radius); }
 label { display: block; font-size: var(--text-control); font-weight: 500; margin-bottom: 10px; }
 .input-wrap { height: var(--control); background: var(--bg); --smooth-border: var(--border); }
 .input-wrap input { width: 100%; height: 100%; padding: 0 12px; background: none; border: 0; min-width: 0; font-size: var(--text-control); }

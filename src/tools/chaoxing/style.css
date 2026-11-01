@@ -5,7 +5,6 @@
 .tool-heading { margin-bottom: 32px; }
 .workspace-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 48px; align-items: start; }
 .workspace { padding: 28px; background: var(--surface); --radius: 16px; }
-.section-heading { margin-bottom: 24px; }
 .source-row { display: flex; align-items: center; gap: 12px; }
 .source-row .input-wrap { flex: 1; min-width: 0; }
 .source-row .button { flex-shrink: 0; }

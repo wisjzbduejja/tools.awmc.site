@@ -8,7 +8,6 @@ export function mount(main, tool) {
     <h1 class="tool-heading">${tool.name}</h1>
     <div class="workspace-layout">
       <section class="workspace smooth" data-radius="16" aria-label="下载设置">
-        <h2 class="section-heading">下载设置</h2>
         <form id="download-form" novalidate>
           <label for="source">起始图片链接</label>
           <div class="source-row">
@@ -36,8 +35,7 @@ export function mount(main, tool) {
         <h2>如何获取图片链接</h2>
         <ol>
           <li><span>1</span><div><h3>打开课件</h3><p>在网页版学习通中，进入需要下载的课件。</p></div></li>
-          <li><span>2</span><div><h3>复制图片链接</h3><p>右键课件的第一页，选择“复制图片链接”。</p></div></li>
-          <li><span>3</span><div><h3>粘贴链接并下载</h3><p>从输入的编号开始，顺序获取后续图片，最后保存 PDF。</p></div></li>
+          <li><span>2</span><div><h3>复制图像链接</h3><p>右键课件的第一页，选择“复制图像链接”。</p></div></li>
         </ol>
       </aside>
     </div>

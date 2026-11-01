@@ -5,9 +5,14 @@ export function observeSmoothCorners(root = document) {
     for (const { target } of entries) {
       const { width, height } = target.getBoundingClientRect();
       if (!width || !height) continue;
-      const radius = Number(target.dataset.radius || 10);
+      const radius = Number(target.dataset.radius ?? parseFloat(getComputedStyle(target).getPropertyValue('--radius')));
       const d = getSvgPath({ width, height, cornerRadius: radius, cornerSmoothing: 0.6 });
-      target.style.clipPath = `path('${d}')`;
+      const clipPath = `path('${d}')`;
+      if (CSS.supports('clip-path', clipPath)) {
+        target.style.clipPath = clipPath;
+        // Let the shared path shape the background, without a second circular crop.
+        target.style.borderRadius = '0';
+      }
       const svg = target.querySelector(':scope > .smooth-border');
       svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
       svg.firstChild.setAttribute('d', d);
